@@ -203,6 +203,10 @@ const controlSearch = async function () {
   }
 }
 
+const newFeature = function() {
+  console.log('Welcome to the appliation!')
+}
+
 export const init = async function () {
   try {
     recipeView.renderMessage('Start by searching for a recipe or an ingredient. Have fun!');
@@ -211,7 +215,7 @@ export const init = async function () {
     recipeView.addHandlerUpdateServings(controlServings);
     recipeView.addHandlerAddBookmark(controlAddBookmark);
     addRecipeView.addHandlerUpload(controlAddRecipe);
-    console.log('Welcome!');
+    newFeature();
   }
   catch (err) {
     console.error('💥', err);
