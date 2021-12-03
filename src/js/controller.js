@@ -187,13 +187,15 @@ const controlSearch = async function () {
       await controlAddSearchResult();
       resultsView.renderSpinner();
       resultsView.render(model.getSearchResultsPage(model.state.search.page));
-      resultsView.addHandlerSortBy(controlSortBy)
+
       // event change url and load recipe
       previewView.addHandleRoute(function (path, id) {
         window.history.pushState(null, '', `${path}`);
         controlRecipe(id);
       });
     }
+
+    resultsView.addHandlerSortBy(controlSortBy);
     searchView.addTextToInput();
     searchView.addHandlerSearch(controlSearchResults);
     paginationView.addHandlerClick(controlPagination);
